@@ -25,6 +25,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+  	apiKey: API_KEY,
   	categories: CATEGORIES_LIST,
   	currentList: CATEGORIES_LIST[0].name,
   	currentPage: 1,
@@ -35,6 +36,7 @@ const store = new Vuex.Store({
   	totalPages: 0
   },
   getters: {
+  	apiKey:  state => state.apiKey,
   	categories: state => JSON.parse(JSON.stringify(state.categories)),
   	currentTitle: state => state.categories.filter( i => i.name === state.currentList)[0].label,
   	currentList: state => state.currentList,
