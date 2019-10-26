@@ -1,5 +1,5 @@
 <template>
-  <div class="card" @click="$emit('cardClicked')">
+  <router-link class="card" :to="`/item/${cardData.id}`">
     <img 
       class="card__image" 
       :src="`http://image.tmdb.org/t/p/w154/${cardData.poster_path}`"
@@ -20,7 +20,7 @@
         {{cardData.overview}}
       </div>
     </div>    
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -43,6 +43,7 @@ export default {
 @import "@/assets/styles/variables.scss";
 
 .card {
+  text-decoration: none;
   box-sizing: border-box;
   width: 350px;
   height: 250px;

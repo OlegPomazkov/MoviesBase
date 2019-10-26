@@ -5,7 +5,6 @@
       v-for="(item, k) in listData"
       :key="item.id"
       :cardData="item"
-      @cardClicked="handleCardClicked(k)"
     />
   </div>
 </template>
@@ -22,12 +21,6 @@ export default {
       type: Array,
       required: true,
       default: ()=>[]
-    }
-  },
-  methods: {
-    async handleCardClicked(num) {
-      await this.$store.dispatch('getFilmData', this.listData[num].id)
-      this.$router.push({path:`/item/${this.listData[num].id}`})
     }
   }
 }
