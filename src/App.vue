@@ -21,6 +21,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/styles/variables.scss";
+
 body {
   width: 100%;
   margin: 0;
@@ -30,5 +32,6 @@ body {
   width: 100%;
   margin-top: 40px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  background: $back_prim;
 }
 </style>

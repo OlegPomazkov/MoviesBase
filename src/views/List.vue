@@ -43,12 +43,14 @@ export default {
 .list {
 	box-sizing: border-box;
 	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	background: $back_prim;
 
 	&__title {
 		box-sizing: border-box;

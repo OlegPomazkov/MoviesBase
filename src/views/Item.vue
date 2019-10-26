@@ -154,7 +154,7 @@ export default {
     productionCompanies() {
     	if(!this.filmData.production_companies) return
 
-    	return this.filmData.production_companies.map( i => `${i.name} (${i.origin_country})`).join(', ')
+    	return this.filmData.production_companies.map( i => `${i.name} ${i.origin_country? `(${i.origin_country})`:''}`).join(', ')
     }
   },  
   async created() {
@@ -195,10 +195,14 @@ export default {
 
 .film {
 	width: 100%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+	background: $white;
 
 	&__up {
 		box-sizing: border-box;
@@ -342,6 +346,7 @@ export default {
 
 			&__voting {
 				box-sizing: border-box;
+				padding-top: 5px;
 				padding-bottom: 5px;
 				display: flex;
 				flex-direction: row;
