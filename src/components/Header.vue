@@ -44,6 +44,11 @@ export default {
 @import "@/assets/styles/variables.scss";
 
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 10001;
   box-sizing: border-box;
   width: 100%;
   height: 40px;
@@ -70,10 +75,13 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 
     &__item {
+      box-sizing: border-box;
+      padding-left: 7px;
+      padding-right: 7px;
       cursor: pointer;
 
       &:hover {

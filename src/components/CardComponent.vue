@@ -8,6 +8,12 @@
     <div class="card__info">
       <div class="card__info__title">
         {{cardData.title}}
+        <span 
+          v-if="releaseYear" 
+          class="year"
+        >
+          {{` (${releaseYear})`}}
+        </span>
       </div>
 
       <div class="card__info__overview">
@@ -24,6 +30,11 @@ export default {
       type: Object,
       required: true
     }
+  },
+  computed: {
+    releaseYear() {
+      return this.cardData.release_date? this.cardData.release_date.split('-')[0]:''
+    }
   }
 }
 </script>
@@ -33,21 +44,43 @@ export default {
 
 .card {
   box-sizing: border-box;
-  width: 100%;
-  max-width: 400px;
+  width: 350px;
+  height: 250px;
+  overflow: auto;
+  margin: 5px;
+  padding: 5px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  background: $white;
+  cursor: pointer;
 
   &__image {
     width: 155px;
   }
   &__info {
     box-sizing: border-box;
+    padding-left: 5px;
     flex: 1;
-    max-width: 240px;
+    max-width: 230px;
+
+    &__title {
+      padding-bottom: 5px;
+      font-size: $title_s;
+      font-weight: bold;
+      color: $text_prim;
+
+      & .year {
+        font-weight: normal;
+      }
+    }
+
+    &__overview {
+      font-size: $text_s;
+      color: $text_prim;      
+    }
   }
 }
 </style>

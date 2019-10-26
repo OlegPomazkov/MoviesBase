@@ -28,6 +28,7 @@ body {
 
 #app {
   width: 100%;
+  margin-top: 40px;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 </style>

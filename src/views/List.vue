@@ -48,5 +48,17 @@ export default {
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+	background: $back_prim;
+
+	&__title {
+		box-sizing: border-box;
+		padding-left: 10px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		align-self: flex-start;
+		font-size: $title;
+		font-weight: bold;
+		color: $black;
+	}
 }
 </style>

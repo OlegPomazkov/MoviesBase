@@ -67,40 +67,56 @@ export default {
 
 .pagination {
   box-sizing: border-box;
-  width: 100%;
-  height: 40px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  background: $back_sec;
   color: $white;
 
-  &__logo {
+  &__control {
     box-sizing: border-box;
-    padding-right: 20px;
+    height: 30px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $back_sec;
     font-size: $text_xl;
-    font-weight: bold;
+    font-weight: 400;
+    border-radius: 30px;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.5;
+    }
+    &.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
   }
 
-  &__links {
+  &__state {
     box-sizing: border-box;
-    font-size: $text;
-    font-weight: normal;
-    flex: 1;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    color: $text_prim;
 
-    &__item {
+    &__input {
+      width: 40px;
+      text-align: center;
+      outline: none;
+      border: none;
+      font-size: $text_xl;
+      font-weight: 400;
       cursor: pointer;
-
-      &:hover {
-        opacity: 0.5;
-      }
+      color: $text_prim;
+      background: $back_prim;
     }
   }
 }
