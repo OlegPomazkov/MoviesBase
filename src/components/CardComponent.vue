@@ -1,9 +1,16 @@
 <template>
   <router-link class="card" :to="`/item/${cardData.id}`">
     <img 
+      v-if="cardData.poster_path"
       class="card__image" 
       :src="`http://image.tmdb.org/t/p/w154/${cardData.poster_path}`"
     />
+    <div
+      v-else
+      class="card__image holder"
+    >
+      NO POSTER
+    </div>
 
     <div class="card__info">
       <div class="card__info__title">
@@ -60,6 +67,14 @@ export default {
 
   &__image {
     width: 155px;
+
+    &.holder {
+      min-width: 155px;
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }    
   }
   &__info {
     box-sizing: border-box;

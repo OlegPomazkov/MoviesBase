@@ -2,9 +2,16 @@
   <div class="film">
   	<div  class="film__up">
 	  	<img 
+	  		v-if="filmData.poster_path"
 	      class="film__up__poster" 
 	      :src="`http://image.tmdb.org/t/p/w342/${filmData.poster_path}`"
 	    />
+	    <div 
+	    	v-else
+	    	class="film__up__poster holder"
+	    >
+	    	NO POSTER
+	    </div>
 
 	    <div  class="film__up__info">
 		    <div class="film__up__info__title">
@@ -216,6 +223,14 @@ export default {
 		&__poster {
 			box-sizing: border-box;
 			width: 344px;
+
+			&.holder {
+				min-width: 344px;
+				margin-top: 40px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 		}
 
 		&__info {
