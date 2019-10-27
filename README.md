@@ -1,28 +1,16 @@
-# videos-test
+# star-wars
 
-## Project setup
+### Клонировать репозиторий и запустить в нем для установки зависимостей
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Запуск проекта для просмотра результатов
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+### Проект должен запускаться именно на http://localhost:8080/ т.к. ключ API базы данных фильмов будет работать только для этого URL
 ```
 
 ### Customize configuration
